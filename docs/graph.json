@@ -1,0 +1,87 @@
+{
+  "nodes": [
+    { "id": "dom_1", "label": "example.com",        "t": "domain", "pr_percent": 7.5, "pr_temporal_percent": 7.2 },
+    { "id": "dom_2", "label": "evil.net",            "t": "domain", "pr_percent": 6.8, "pr_temporal_percent": 7.0 },
+    { "id": "dom_3", "label": "shop.example",        "t": "domain", "pr_percent": 5.2, "pr_temporal_percent": 5.6 },
+    { "id": "dom_4", "label": "api.example",         "t": "domain", "pr_percent": 3.2, "pr_temporal_percent": 3.1 },
+    { "id": "dom_5", "label": "updates.example",     "t": "domain", "pr_percent": 2.8, "pr_temporal_percent": 2.2 },
+    { "id": "dom_6", "label": "cdn.example",         "t": "domain", "pr_percent": 3.5, "pr_temporal_percent": 3.7 },
+
+    { "id": "ip_1",  "label": "10.0.0.1",            "t": "ip",     "pr_percent": 3.0, "pr_temporal_percent": 2.9 },
+    { "id": "ip_2",  "label": "10.0.0.2",            "t": "ip",     "pr_percent": 2.2, "pr_temporal_percent": 2.1 },
+    { "id": "ip_3",  "label": "10.0.0.3",            "t": "ip",     "pr_percent": 3.6, "pr_temporal_percent": 3.4 },
+    { "id": "ip_4",  "label": "172.16.5.10",         "t": "ip",     "pr_percent": 1.8, "pr_temporal_percent": 1.4 },
+    { "id": "ip_5",  "label": "192.168.1.50",        "t": "ip",     "pr_percent": 1.5, "pr_temporal_percent": 1.2 },
+    { "id": "ip_6",  "label": "185.23.11.2",         "t": "ip",     "pr_percent": 2.9, "pr_temporal_percent": 3.1 },
+    { "id": "ip_7",  "label": "66.77.88.99",         "t": "ip",     "pr_percent": 2.1, "pr_temporal_percent": 2.4 },
+    { "id": "ip_8",  "label": "203.0.113.45",        "t": "ip",     "pr_percent": 1.7, "pr_temporal_percent": 2.0 },
+    { "id": "ip_9",  "label": "198.51.100.12",       "t": "ip",     "pr_percent": 1.3, "pr_temporal_percent": 1.1 },
+    { "id": "ip_10", "label": "5.45.23.9",           "t": "ip",     "pr_percent": 1.9, "pr_temporal_percent": 2.2 },
+
+    { "id": "cert_1","label": "CN=Demo",             "t": "cert",   "pr_percent": 2.4, "pr_temporal_percent": 2.2 },
+    { "id": "cert_2","label": "CN=Wildcard-Example", "t": "cert",   "pr_percent": 3.8, "pr_temporal_percent": 3.6 },
+    { "id": "cert_3","label": "CN=EvilCorp",         "t": "cert",   "pr_percent": 3.2, "pr_temporal_percent": 3.5 },
+    { "id": "cert_4","label": "CN=ShopTLS",          "t": "cert",   "pr_percent": 2.7, "pr_temporal_percent": 2.8 },
+    { "id": "cert_5","label": "CN=Legacy",           "t": "cert",   "pr_percent": 1.1, "pr_temporal_percent": 0.6 },
+    { "id": "cert_6","label": "CN=NewEdge",          "t": "cert",   "pr_percent": 1.6, "pr_temporal_percent": 2.0 },
+
+    { "id": "hash_1","label": "abc123",              "t": "hash",   "pr_percent": 1.2, "pr_temporal_percent": 1.1 },
+    { "id": "hash_2","label": "e4f9aa",              "t": "hash",   "pr_percent": 0.9, "pr_temporal_percent": 0.8 },
+    { "id": "hash_3","label": "9b1d77",              "t": "hash",   "pr_percent": 1.4, "pr_temporal_percent": 1.7 },
+    { "id": "hash_4","label": "d0c0de",              "t": "hash",   "pr_percent": 0.7, "pr_temporal_percent": 0.5 },
+    { "id": "hash_5","label": "f00db4",              "t": "hash",   "pr_percent": 1.0, "pr_temporal_percent": 0.9 },
+    { "id": "hash_6","label": "cafeba",              "t": "hash",   "pr_percent": 0.8, "pr_temporal_percent": 1.0 },
+    { "id": "hash_7","label": "deadbe",              "t": "hash",   "pr_percent": 1.3, "pr_temporal_percent": 1.2 },
+    { "id": "hash_8","label": "badc0d",              "t": "hash",   "pr_percent": 0.6, "pr_temporal_percent": 0.7 },
+    { "id": "hash_9","label": "feedfa",              "t": "hash",   "pr_percent": 1.1, "pr_temporal_percent": 1.3 },
+    { "id": "hash_10","label": "7ac0e1",             "t": "hash",   "pr_percent": 0.9, "pr_temporal_percent": 1.0 },
+    { "id": "hash_11","label": "a11ce0",             "t": "hash",   "pr_percent": 0.8, "pr_temporal_percent": 0.9 },
+    { "id": "hash_12","label": "bbccdd",             "t": "hash",   "pr_percent": 0.7, "pr_temporal_percent": 0.6 }
+  ],
+  "links": [
+    { "source": "dom_1", "target": "ip_1" },
+    { "source": "dom_1", "target": "ip_3" },
+    { "source": "dom_1", "target": "cert_2" },
+    { "source": "dom_1", "target": "cert_1" },
+    { "source": "dom_1", "target": "hash_1" },
+    { "source": "dom_1", "target": "hash_5" },
+    { "source": "dom_1", "target": "hash_9" },
+
+    { "source": "dom_2", "target": "ip_3" },
+    { "source": "dom_2", "target": "ip_6" },
+    { "source": "dom_2", "target": "ip_7" },
+    { "source": "dom_2", "target": "cert_3" },
+    { "source": "dom_2", "target": "hash_3" },
+    { "source": "dom_2", "target": "hash_7" },
+
+    { "source": "dom_3", "target": "ip_2" },
+    { "source": "dom_3", "target": "ip_4" },
+    { "source": "dom_3", "target": "cert_4" },
+    { "source": "dom_3", "target": "cert_2" },
+    { "source": "dom_3", "target": "hash_2" },
+    { "source": "dom_3", "target": "hash_6" },
+
+    { "source": "dom_4", "target": "ip_5" },
+    { "source": "dom_4", "target": "ip_8" },
+    { "source": "dom_4", "target": "cert_6" },
+    { "source": "dom_4", "target": "hash_10" },
+
+    { "source": "dom_5", "target": "ip_9" },
+    { "source": "dom_5", "target": "ip_10" },
+    { "source": "dom_5", "target": "cert_5" },
+    { "source": "dom_5", "target": "hash_4" },
+    { "source": "dom_5", "target": "hash_11" },
+
+    { "source": "dom_6", "target": "ip_6" },
+    { "source": "dom_6", "target": "ip_8" },
+    { "source": "dom_6", "target": "cert_2" },
+    { "source": "dom_6", "target": "cert_6" },
+    { "source": "dom_6", "target": "hash_12" },
+
+    { "source": "hash_3",  "target": "ip_7" },
+    { "source": "hash_9",  "target": "ip_1" },
+    { "source": "hash_6",  "target": "ip_4" },
+    { "source": "hash_12", "target": "ip_8" }
+  ]
+}
+

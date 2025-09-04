@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>Threat Graph MVP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+    <!-- Scripts: D3 first, then the app (both defer) -->
+    <script src="https://d3js.org/d3.v7.min.js" defer></script>
+    <script src="app.js?v=7" defer></script>
+
+    <!-- Lightweight favicon to avoid 404s -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23111827'/%3E%3C/svg%3E">
+</head>
+<body>
+<header>
+    <h1>Threat Graph MVP</h1>
+
+    <div class="controls">
+        <!-- Generate -->
+        <button id="btn-generate">Generar grafo</button>
+
+        <!-- Mode -->
+        <div class="toggle">
+            <label><input type="radio" name="mode" value="static" checked> Estático</label>
+            <label><input type="radio" name="mode" value="temporal"> Temporal</label>
+        </div>
+
+        <!-- Search -->
+        <input id="search-input" type="search" placeholder="Buscar dominio/IP/hash/label…" style="min-width: 280px;">
+        <button id="btn-search">Buscar</button>
+        <button id="btn-reset">Reset</button>
+
+        <!-- Export -->
+        <button id="btn-export-png" title="Exportar captura del grafo en PNG">Export PNG</button>
+        <button id="btn-export-json" title="Exportar subgrafo actual (filtro aplicado) a JSON">Export JSON</button>
+    </div>
+</header>
+
+<main id="app">
+    <!-- Side panel (hidden by default) -->
+    <aside id="sidepanel" aria-live="polite" style="display:none">
+        <div class="sp-header">
+            <h3 id="sp-title">Nodo</h3>
+            <button id="sp-close" title="Cerrar (Esc)">✕</button>
+        </div>
+
+        <div id="sp-content">
+            <div class="kv"><span>Tipo</span><b id="sp-type">-</b></div>
+            <div class="kv"><span>Label</span><b id="sp-label">-</b></div>
+            <div class="kv"><span>PR %</span><b id="sp-pr">-</b></div>
+            <div class="kv"><span>PR temporal %</span><b id="sp-prt">-</b></div>
+            <div class="kv"><span>last_seen</span><b id="sp-last">-</b></div>
+
+            <h4>Vecinos</h4>
+            <ul id="sp-neighbors"></ul>
+        </div>
+    </aside>
+
+    <!-- Graph canvas -->
+    <section id="graph">
+        <div id="legend"></div>
+        <pre id="log"></pre>
+    </section>
+</main>
+</body>
+</html>
